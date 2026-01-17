@@ -1,0 +1,3452 @@
+:root {
+    /* Brand colors */
+    --color-primary: #1B1D2B;
+    --color-secondary: #ffb703;
+
+    /* UI colors */
+    --color-bg-glass: rgba(255, 255, 255, 0.12);
+    --color-text-light: #ffffff;
+    --color-border-light: rgba(255, 255, 255, 0.2);
+
+    --menu-bg-start: #14172a;
+    --menu-bg-end: #0f1222;
+    --menu-text: #cfd6ff;
+    --menu-divider: rgba(255,255,255,0.08);
+    /* Spacing */
+    --space-sm: 6px;
+    --space-md: 12px;
+    --space-lg: 16px;
+
+    /* Blur */
+    --blur-glass: blur(8px);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+body::before {
+    position: fixed;
+    content: "";
+    display: block;
+    inset: 0px;
+    background-image: url(https://static.avionero.com/images/homepage/homepage-background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+
+.brand-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-name {
+    color: white;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.tagline {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 500;
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    margin-top: 0;
+    height: 100vh;
+    background: rgb(27 29 43 / 49%);
+}
+
+.left-sidebar {
+    width: 120px;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.2);
+    position: fixed;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+    padding-top: 17px;
+}
+
+.left-sidebar-2 {
+    width: 355px;
+    background: transparent;
+    position: fixed;
+    left: 120px;
+    top: 0; 
+    padding: 20px 24px;
+    z-index: 4;
+    height: 100vh;
+}
+
+.sidebar-title {
+    color: white;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    align-self: flex-start;
+    padding: 0px 9px;
+    margin-bottom: 9px;
+}
+
+.trip-item-tital {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* small date badge shown under a trip title */
+.trip-date {
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+}
+
+.trip-block {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.12);
+    padding: 14px 18px 13px 10px;
+    margin-bottom: 8px;
+    transition: background-color 0.2s;
+}
+
+.trip-block:hover {
+    background-color: rgba(255, 255, 255, 0.16);
+}
+.duplicate-btn {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 6px 0px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    line-height: 17px;
+    font-weight: 500;
+    margin-top: 12px;
+    width: 100%;
+    max-width: 100px;
+    align-self: flex-start;
+    transition: all 0.2s;
+}
+
+.duplicate-btn:hover {
+    background: rgba(255,255,255,0.04);
+    border-color: #ffffff;
+}
+
+.add-trip-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: none;
+    color: #333333;
+    font-size: 28px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.12s, box-shadow 0.12s;
+    margin-top: 12px; /* sit directly under the Duplicate button */
+    margin-bottom: 12px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.28);
+}
+
+.add-trip-btn:active {
+    transform: scale(0.98);
+}
+
+/* Main Content Area */
+.main-content {
+    margin-left: 480px;
+    width: 100%;
+    min-width: calc(100% - 540px);
+    position: relative;
+    transition: transform 0.3s;
+    background: rgba(27, 29, 43, 0);
+}
+
+.scrolled .examples-section, .scrolled .features-section,
+.scrolled .mission-section, .scrolled .subscribe-banner,
+.scrolled .featured-destinations-section, .scrolled .featured-destinations-section,
+.scrolled .other-destinations, .scrolled {
+    background-color: var(--color-primary) !important;
+    transition: background-color 0.8s ease-in-out;
+}
+
+.content-wrapper {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 680px;
+    margin: auto;
+    height: 100vh;
+    padding-top: 170px;
+    padding-left: 40px;
+    padding-right: 40px;
+    position: relative;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    transition: 0.2s;
+}
+
+.search-section {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.search-field {
+    background: #ffffff;
+    border: none;
+    padding: 11px 12px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: text;
+    transition: transform 0.12s, box-shadow 0.12s;
+    color: #111;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.search-field:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-icon {
+    font-size: 21px;
+    color: #333;
+    width: 26px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-right-icon {
+    margin-left: auto;
+    font-size: 17px;
+    color: rgba(26, 30, 34, 0.5);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    border: none;
+    background: transparent;
+}
+
+/* inputs inside each search field */
+.search-field input {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 500;
+    color: #111;
+    padding-left: 8px;
+}
+
+.search-field input::placeholder { color: #9aa3a8; }
+
+.search-field input:focus ~ .search-right-icon,
+.search-field input:focus + .search-right-icon {
+    color: #6b7280;
+}
+
+.promo-section {
+    /* max-width: 900px; */
+    width: 100%;
+    text-align: left;
+    position: relative;
+}
+
+.promo-controls {
+    position: fixed;
+    /* width: 40%; */
+    top: 16px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    padding: 8px 12px;
+
+    color: white;
+    font-size: 14px;
+    z-index: 2200;
+}
+
+
+/* Promo CTA section positioned under the promo-controls */
+.promo-cta {
+    margin-top: 64px;
+    max-width: 720px;
+    padding: 0;
+}
+
+.promo-cta .promo-title {
+    color: white;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+}
+
+.promo-cta .promo-description {
+    color: rgba(255,255,255,0.9);
+    font-size: 19px;
+    line-height: 28px;
+    font-weight: 500;
+    max-width: 680px;
+    margin-bottom: 32px;
+}
+
+.promo-cta .start-btn {
+    height: 44px;
+    padding: 0px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    cursor: pointer;
+    background-color: rgb(75, 118, 255);
+    color: rgb(255, 255, 255);
+    border: none;
+    transition: all 0.2s;
+    box-shadow: 0 4px 12px rgba(75, 118, 255, 0.3);
+}
+
+.start-btn:hover {
+    background-color: rgb(93, 132, 255);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(75, 118, 255, 0.4);
+}
+
+.start-btn:active {
+    transform: translateY(0);
+}
+option{
+    color: rgba(0, 0, 0, 0.95);
+}
+
+.promo-controls .promo-icon {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.promo-controls .promo-select {
+    background: transparent;
+    border: none;
+    color: rgba(246, 246, 246, 0.95);
+    font-size: 13px;
+    padding: 4px 6px;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.promo-controls .promo-icon {
+    display: inline-flex;
+    width: 26px;
+    height: 26px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.06);
+    color: #fff;
+    font-size: 16px;
+}
+
+
+.promo-menu-toggle {
+    background: transparent;
+    border: none;
+    color: rgba(255,255,255,0.95);
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+}
+
+.promo-menu-toggle:hover { background: rgba(255,255,255,0.04); }
+
+/* (removed duplicate promo-controls rule) */
+
+
+.promo-menu.open { display: flex; }
+
+
+
+.promo-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: calc(top + 20px); /* 20px right margin */
+    height: fit-content;
+    background: linear-gradient(
+        180deg,
+        var(--menu-bg-start),
+        var(--menu-bg-end)
+    );
+    display: none;
+    flex-direction: column;
+    padding: 0;
+    z-index: 99999;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+    animation: menuFade 0.25s ease;
+}
+
+
+
+
+.promo-menu > div {
+    display: flex;
+    padding: 16px;
+    align-items: center;
+    width: 100%;
+}
+
+/* Wrap selects together */
+
+/* Selects group */
+.promo-menu > div select {
+    max-width: 90px;
+    padding: 6px 8px;
+}
+
+
+.promo-select-nav {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--menu-text);
+
+    padding: 6px 7px;
+    font-size: 14px;
+    border-radius: 6px;
+    margin-right: 10px;
+
+    outline: none;
+    cursor: pointer;
+}
+
+.promo-select-nav option {
+    background: #0f1222;
+    color: #fff;
+}
+
+/* Close span – ALWAYS visible */
+.close {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: #cfd6ff;
+    font-size: 14px;
+    cursor: pointer;
+    line-height: normal;
+    font-weight: 600;
+}
+
+
+.close:hover {
+    opacity: 0.7;
+}
+
+
+.promo-menu a {
+    color: var(--menu-text);
+    padding: 18px 24px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+
+    display: flex;
+    align-items: center;
+
+    border-bottom: 1px solid var(--menu-divider);
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        padding-left 0.2s ease;
+}
+
+.promo-menu a:hover {
+    background: rgba(59,106,255,0.12);
+    color: #fff;
+    padding-left: 34px;
+}
+
+.promo-menu a:last-child {
+    border-bottom: none;
+}
+
+/* Small fade animation */
+@keyframes menuFade {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+    
+.scroll-indicator {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 24px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+.promo-main-title {
+    color: white;
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    line-height: 1.3;
+}
+
+.promo-main-subtitle {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Examples section (search suggestions) */
+.examples-section {
+    padding: 48px 30px 72px;
+    display: flex;
+    justify-content: center;
+}
+
+.examples-inner {
+    width: 100%;
+    max-width: 1100px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.examples-title {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 22px;
+}
+
+.examples-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 22px;
+    justify-content: center;
+    align-items: center;
+    margin: 8px auto 0;
+}
+
+.example-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 22px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.03);
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255,255,255,0.12);
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.example-pill:hover {
+    border: solid 1px #ffff;
+    color: #fff;
+}
+
+/* Features / Cards section (two-column) */
+.features-section {
+    padding: 48px 0 72px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Featured Destinations Section */
+.featured-destinations-section {
+    padding: 60px 30px;
+    color: #fff;
+}
+
+.featured-destinations-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.featured-destinations-title {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 41px;
+    margin: 0 0 32px 0;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.featured-destinations-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.destination-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 33.333%;
+}
+
+.destination-card {
+    width: 100%;
+    max-width: 320px;
+    background: transparent;
+    border-radius: 8px;
+    padding: 0;
+    color: #fff;
+}
+
+.destination-image {
+    width: 100%;
+    height: 334px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Other Destinations Grid */
+.other-destinations {
+    padding: 48px 30px;
+    color: #fff;
+}
+
+.other-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.other-title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0 0 12px 0;
+    color: #fff;
+}
+
+.other-subtitle {
+    color: rgba(255,255,255,0.6);
+    margin: 0 0 22px 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.other-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px 22px;
+    margin-top: 12px;
+}
+
+.other-tile {
+    display: block;
+    box-sizing: border-box;
+    height: 100px;
+    padding: 14px 21px;
+    background-image: linear-gradient(122.13deg, rgba(196, 196, 196, 0.1) 30.71%, transparent 100%);
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 30px;
+    text-decoration: none;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.other-tile:hover {
+    background-image: linear-gradient(122.13deg, rgba(196, 196, 196, 0.2) 30.71%, rgba(255, 255, 255, 0.05) 100%);
+    color: #fff;
+}
+
+.small { 
+    color: rgba(255,255,255,0.45); 
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    margin-bottom: 6px; 
+}
+.big { 
+    font-size: 20px; 
+    font-weight: 600; 
+    line-height: 27px;
+    color: #fff; 
+}
+
+@media (max-width: 960px) {
+    .other-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+    .other-grid { grid-template-columns: 1fr; }
+
+    .promo-menu{
+        right: 0px;
+    }
+    .promo-menu > div {
+        padding: 16px;
+    }
+
+    .promo-select-nav {
+        font-size: 13px;
+        padding: 6px 8px;
+    }
+
+    .close {
+        margin-left: -10px;
+        /* position: absolute; */
+        /* right: 1px; */
+        top: 16px;
+
+        width: 25px;
+        height: 25px;
+        font-size: 20px;
+    }
+}
+
+
+@media (max-width: 550px) {
+
+    .close {
+        margin-left: -10px;
+        /* position: absolute; */
+        /* right: 1px; */
+        top: 16px;
+
+        width: 25px;
+        height: 25px;
+        font-size: 20px;
+    }
+}
+
+.destination-image:hover {
+    opacity: 1;
+}
+
+.destination-name {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 25px;
+    margin: 16px 0 8px 0;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.destination-travel-time {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    color: rgba(255,255,255,0.85);
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.destination-travel-time svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+.destination-tags {
+    display: flex;
+    gap: 8px;
+    margin: 8px 0 25px 0;
+}
+
+.destination-tag {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.explore-anywhere-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+    background: transparent;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: border-color 0.2s, background-color 0.2s;
+    font-family: 'Open Sans', sans-serif;
+    width: fit-content;
+}
+
+.explore-anywhere-btn:hover {
+    border-color: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.05);
+}
+
+.features-inner {
+    width: 100%;
+    max-width: 1100px;
+    padding: 0 30px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.feature-card {
+    background: #272939;
+    border-radius: 12px;
+    padding: 52px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 220px;
+}
+
+.feature-icon {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 12px;
+}
+
+.feature-icon svg {
+    width: 100%;
+    max-width: 245px;
+    height: auto;
+    display: block;
+}
+
+.feature-title {
+    font-size: 24px;
+    line-height: 33px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+}
+
+.feature-desc {
+    color: rgba(255,255,255,0.78);
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 600;
+    margin-top: 6px;
+    flex: 1 1 auto;
+}
+
+/* Mission Section */
+.mission-section {
+    color: #ffffff;
+    padding: 110px 18px;
+    text-align: center;
+}
+
+.mission-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.mission-subtitle {
+    color: rgba(255,255,255,0.92);
+    font-size: 24px;
+    line-height: 33px;
+    font-weight: 600;
+    margin-bottom: 22px;
+}
+
+.mission-title {
+    font-size: 36px;
+    line-height: 49px;
+    font-weight: 600;
+    margin: 0 auto 28px;
+    max-width: 930px;
+}
+
+.mission-btn {
+    display: inline-block;
+    background: transparent;
+    color: rgba(255,255,255,0.85);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 12px 20px;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.18s, border-color 0.12s;
+}
+
+.mission-btn:hover {
+    color: #ffffff;
+    border-color: rgba(255,255,255,1);
+    background: transparent;
+}
+
+/* Subscribe Banner */
+.subscribe-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.subscribe-container {
+    background-color: #2563eb;
+    border-radius: 12px;
+    padding: 60px 80px;
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 45px;
+}
+
+.subscribe-form {
+    max-width: 310px;
+    flex: 1;
+}
+
+.subscribe-title {
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    line-height: 37px;
+}
+
+.email-input {
+    width: 313px;
+    height: 42px;
+    margin-bottom: 11px;
+    background: rgb(255, 255, 255);
+    border-radius: 3px;
+    border: none;
+    padding: 0px 8px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: rgb(32, 37, 49);
+    box-sizing: border-box;
+    outline: none;
+}
+
+.email-input::placeholder {
+    color: #9ca3af;
+}
+
+.signup-button {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 313px;
+    height: 42px;
+    background: rgb(91, 151, 250);
+    border-radius: 3px;
+    border: none;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.15s ease-in-out;
+    font-family: inherit;
+}
+
+.signup-button:hover {
+    background-color: #8baaff;
+    color: #fff;
+}
+
+.subscribe-description {
+    max-width: 300px;
+    flex: 1;
+    color: white;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    margin-top: 36px;
+}
+
+/* Media Queries */
+@media (max-width: 0px) {
+    .main-container {
+        flex-direction: column;
+    }
+    /* .left-sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 15px;
+    } */
+    .promo-menu > div {
+        padding: 16px;
+    }
+
+    .promo-select-nav {
+        font-size: 13px;
+        padding: 6px 8px;
+    }
+
+    .left-sidebar-2 {
+        position: relative;
+        width: 100%;
+        left: 0;
+        height: auto;
+        padding: 20px;
+    }
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        min-width: 100%;
+    }
+    .features-inner { 
+        grid-template-columns: 1fr; 
+    }
+    .content-wrapper { 
+        padding-top: 40px;
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .promo-cta {
+        margin-top: 50px;
+        padding: 18px 8px 28px 0;
+    }
+    .promo-cta .promo-title {
+        font-size: 32px;
+    }
+    .promo-cta .promo-description {
+        font-size: 18px;
+    }
+    .brand-name {
+        font-size: 24px;
+    }
+    .tagline {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .search-field {
+        font-size: 16px;
+        padding: 10px 12px;
+    }
+    .featured-destinations-section {
+        padding: 40px 24px;
+    }
+    .featured-destinations-title {
+        font-size: 28px;
+        margin-bottom: 24px;
+    }
+    .destination-card {
+        max-width: 100%;
+    }
+    .destination-image {
+        height: 220px;
+    }
+    .mission-title { 
+        font-size: 32px; 
+        padding: 0 12px; 
+    }
+    .mission-subtitle { 
+        font-size: 16px; 
+    }
+    .mission-section { 
+        padding: 60px 30px; 
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar-title {
+        font-size: 13px;
+        padding: 10px;
+    }
+    .trip-item-tital {
+        font-size: 13px;
+    }
+    .trip-date {
+        font-size: 11px;
+    }
+    .promo-menu > div {
+        padding: 16px 18px;
+    }
+
+    .promo-menu a {
+        font-size: 15px;
+        padding: 16px 18px;
+    }
+    
+    .duplicate-btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+    .add-trip-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 24px;
+    }
+    .brand-name {
+        font-size: 22px;
+    }
+    .tagline {
+        font-size: 15px;
+        line-height: 22px;
+    }
+    .search-section {
+        margin-top: 30px;
+    }
+    .search-field {
+        font-size: 15px;
+        padding: 10px 12px;
+    }
+    .search-field input {
+        font-size: 14px;
+    }
+
+    .promo-cta {
+        margin-top: 50px;
+    }
+    .promo-cta .promo-title {
+        font-size: 28px;
+        margin-bottom: 16px;
+    }
+    .promo-cta .promo-description {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 24px;
+    }
+    .start-btn {
+        height: 36px;
+        padding: 0px 10px;
+        font-size: 15px;
+    }
+    .content-wrapper {
+        padding-top: 60px;
+    }
+    .examples-section {
+        padding: 36px 0 54px;
+    }
+    .examples-title {
+        font-size: 24px;
+        margin-bottom: 18px;
+    }
+    .features-section {
+        padding: 36px 0 54px;
+    }
+    .feature-card {
+        padding: 40px;
+    }
+    .feature-title {
+        font-size: 20px;
+        line-height: 28px;
+    }
+    .feature-desc {
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .subscribe-container {
+        flex-direction: column;
+        gap: 40px;
+        padding: 50px 40px;
+    }
+    .subscribe-title {
+        font-size: 32px;
+        margin-bottom: 24px;
+    }
+    .subscribe-description {
+        text-align: center;
+        margin-top: 0;
+    }
+    .email-input {
+        width: 100%;
+    }
+    .signup-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .left-sidebar {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .sidebar-title {
+        font-size: 12px;
+        padding: 8px;
+        width: 100%;
+        text-align: center;
+    }
+    .trip-block {
+        padding: 12px 15px;
+    }
+    .left-sidebar-2 {
+        padding: 15px;
+    }
+    .brand-name {
+        font-size: 20px;
+    }
+    .tagline {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .search-section {
+        margin-top: 20px;
+        gap: 4px;
+    }
+    .search-field {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+    .search-field input {
+        font-size: 13px;
+    }
+
+    .promo-controls .promo-select {
+        font-size: 11px;
+        padding: 2px 4px;
+    }
+    .promo-cta {
+        margin-top: 40px;
+        padding: 15px 8px 20px 0;
+    }
+    .promo-cta .promo-title {
+        font-size: 24px;
+        margin-bottom: 14px;
+    }
+    .promo-cta .promo-description {
+        font-size: 15px;
+        line-height: 22px;
+        margin-bottom: 20px;
+    }
+    .content-wrapper {
+        padding-top: 50px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .examples-title { 
+        font-size: 22px; 
+    }
+    .example-pill { 
+        padding: 10px 14px; 
+        font-size: 14px; 
+    }
+    .feature-card {
+        padding: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0;
+    }
+
+    .close {
+        margin-left: 0px;
+       
+        top: 16px;
+        z-index: 5555;
+
+        width: 20px;
+        height: 20px;
+        font-size: 20px;
+    }
+    .main-container {
+        flex-direction: column;
+    }
+    .left-sidebar {
+        width: 100%;
+        padding: 8px;
+    }
+    .sidebar-title {
+        font-size: 11px;
+        padding: 6px;
+    }
+    .trip-block {
+        padding: 10px 12px;
+    }
+    .trip-item-tital {
+        font-size: 12px;
+    }
+    .trip-date {
+        font-size: 10px;
+    }
+    .duplicate-btn {
+        font-size: 11px;
+        padding: 5px 10px;
+        max-width: 80px;
+    }
+    .add-trip-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 20px;
+    }
+    .left-sidebar-2 {
+        padding: 12px;
+    }
+    .brand-name {
+        font-size: 18px;
+    }
+    .tagline {
+        font-size: 13px;
+        line-height: 18px;
+    }
+    .search-section {
+        margin-top: 15px;
+        gap: 3px;
+    }
+    .search-field {
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+    .search-field input {
+        font-size: 12px;
+    }
+    .search-icon {
+        font-size: 16px;
+        width: 22px;
+    }
+
+    .promo-controls .promo-icon {
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+    }
+    .promo-controls .promo-select {
+        font-size: 10px;
+        padding: 2px 3px;
+    }
+    .promo-cta {
+        margin-top: 35px;
+        padding: 12px 8px 18px 0;
+    }
+    .promo-cta .promo-title {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+    .promo-cta .promo-description {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 18px;
+    }
+    .start-btn {
+        height: 34px;
+        padding: 0px 10px;
+        font-size: 14px;
+    }
+    .content-wrapper {
+        padding-top: 40px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    .examples-section {
+        padding: 30px 0 40px;
+    }
+    .examples-inner {
+        padding: 0 12px;
+    }
+    .examples-title {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+    .examples-list {
+        gap: 12px 16px;
+    }
+    .example-pill {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    .features-section {
+        padding: 30px 0 40px;
+    }
+    .features-inner {
+        padding: 0 12px;
+        gap: 12px;
+    }
+    .feature-card {
+        padding: 28px;
+        min-height: auto;
+    }
+    .feature-title {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .feature-desc {
+        font-size: 15px;
+        line-height: 20px;
+    }
+    .mission-section {
+        padding: 40px 12px;
+    }
+    .mission-subtitle {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 16px;
+    }
+    .mission-title {
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 20px;
+    }
+    .mission-btn {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+    .featured-destinations-section {
+        padding: 32px 20px;
+    }
+    .featured-destinations-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .destination-name {
+        font-size: 18px;
+    }
+    .destination-image {
+        height: 200px;
+    }
+    .explore-anywhere-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+    .subscribe-container {
+        padding: 40px 24px;
+        gap: 32px;
+        border-radius: 8px;
+    }
+    .subscribe-title {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    .email-input {
+        width: 100%;
+        padding: 14px 18px;
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+    .signup-button {
+        width: 100%;
+        padding: 14px 18px;
+        font-size: 15px;
+    }
+    .subscribe-description {
+        font-size: 15px;
+        text-align: left;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 360px) {
+    .left-sidebar {
+        padding: 6px;
+    }
+    .sidebar-title {
+        font-size: 10px;
+        padding: 5px;
+    }
+    .trip-block {
+        padding: 8px 10px;
+    }
+    .trip-item-tital {
+        font-size: 11px;
+    }
+    .trip-date {
+        font-size: 9px;
+    }
+    .duplicate-btn {
+        font-size: 10px;
+        padding: 4px 8px;
+        max-width: 70px;
+    }
+    .add-trip-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 18px;
+    }
+    .left-sidebar-2 {
+        padding: 10px;
+    }
+    .brand-name {
+        font-size: 16px;
+    }
+    .tagline {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .search-field {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+    .search-field input {
+        font-size: 11px;
+    }
+
+    .promo-cta .promo-title {
+        font-size: 26px;
+        font-weight: 700;
+    }
+    .promo-cta .promo-description {
+        font-size: 15px;
+        line-height: normal;
+    }
+    .content-wrapper {
+        padding-top: 35px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .examples-title {
+        font-size: 22px;
+        line-height: 30px;
+        font-weight: 600;          }
+    .example-pill {
+        padding: 6px 10px;
+        font-size: 16px;
+    }
+    .feature-card {
+        padding: 24px;
+    }
+    .feature-title {
+        font-size: 22px;
+        line-height: 30px;
+    }
+    .feature-desc {
+        font-size: 18px;
+        line-height: 25px;
+    }
+    .mission-title {
+        font-size: 20px;
+        line-height: 28px !important;
+    }
+    .mission-subtitle {
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .featured-destinations-title {
+        font-size: 22px;
+        line-height: 30px;
+    }
+    .destination-name {
+        font-size: 16px;
+    }
+    .subscribe-container {
+        padding: 32px 20px;
+    }
+    .subscribe-title {
+        font-size: 30px;
+        line-height: 37px;
+    }
+    .email-input,
+    .signup-button {
+        padding: 12px 16px;
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .subscribe-description {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .featured-destinations-section {
+        padding: 40px 24px;
+    }
+    .featured-destinations-title {
+        font-size: 28px;
+        margin-bottom: 24px;
+    }
+    .destination-card {
+        max-width: 100%;
+    }
+    .destination-image {
+        height: 220px;
+    }
+    .mission-title { 
+        font-size: 32px; 
+        padding: 0 12px; 
+    }
+    .mission-subtitle { 
+        font-size: 16px; 
+    }
+    .mission-section { 
+        padding: 60px 18px; 
+    }
+}
+
+/* Passenger Popup Modal */
+.passenger-popup {
+    position: fixed;
+    left: -400px;
+    top: 0;
+    width: 400px;
+    height: 100vh;
+    background-color: #2c2c2c;
+    z-index: 2;
+    transition: left 0.3s ease-in-out;
+    overflow-y: auto;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.passenger-popup.open {
+    left: 480px; /* Position after the two sidebars (120px + 420px) */
+}
+
+.passenger-popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.passenger-popup-title {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.passenger-popup-close {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.passenger-popup-close:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.passenger-popup-content {
+    padding: 24px;
+}
+
+.class-selection {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.class-btn {
+    flex: 1;
+    padding: 14px 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background-color: transparent;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.class-btn.active {
+    background-color: #0066cc;
+    border-color: #0066cc;
+    color: white;
+}
+
+.class-btn:not(.active):hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.person-icons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    padding: 0 4px;
+}
+
+.person-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.person-icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+}
+
+.person-icon.active {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.passenger-category {
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+}
+
+.passenger-category-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom: 12px; */
+}
+
+.passenger-category-name {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.passenger-category-age {
+    color: #b0b0b0;
+    font-size: 13px;
+    font-weight: 400;
+    margin-left: 15px;
+}
+
+.passenger-counter {
+    display: flex;
+    align-items: center;
+}
+
+.counter-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.counter-btn[id^="decrease"] {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.counter-btn[id^="increase"] {
+    background-color: #0066cc;
+}
+
+.counter-btn:hover:not(:disabled) {
+    opacity: 0.8;
+}
+
+.counter-btn:active:not(:disabled) {
+    transform: scale(0.95);
+}
+
+.counter-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.counter-value {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    min-width: 30px;
+    text-align: center;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 540px; /* Start after the sidebars (120px + 420px) */
+    right: 0;
+    bottom: 0;
+    backface-visibility: hidden;
+    background: rgb(32, 37, 49);
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.footer-promo-controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.passenger-popup-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.done-btn {
+    width: 100%;
+    padding: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.done-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-1px);
+}
+
+.done-btn:active {
+    transform: translateY(0);
+}
+
+.passenger-popup-content {
+    padding-bottom: 100px; /* Space for footer */
+}
+
+.popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* From City Popup Modal */
+.from-popup {
+    position: fixed;
+    left: -400px;
+    top: 0;
+    width: 400px;
+    height: 100vh;
+    background-color: #2c2c2c;
+    z-index: 2;
+    transition: left 0.3s ease-in-out;
+    overflow-y: auto;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.from-popup.open {
+    left: 480px; /* Position after the two sidebars (120px + 420px) */
+}
+
+.from-popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 24px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.from-popup-title {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.from-popup-close {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.from-popup-close:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.from-popup-content {
+    padding: 24px;
+}
+
+.suggestions-title {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.suggestions-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.suggestion-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background-color 0.2s, padding-left 0.2s;
+}
+
+.suggestion-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding-left: 8px;
+}
+
+.suggestion-city {
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.suggestion-code {
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+/* To Destination Popup Modal */
+.to-popup {
+    position: fixed;
+    left: -400px;
+    top: 0;
+    width: 400px;
+    height: 100vh;
+    background-color: #2c2c2c;
+    z-index: 2;
+    transition: left 0.3s ease-in-out;
+    overflow-y: auto;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.to-popup.open {
+    left: 480px; /* Position after the two sidebars (120px + 420px) */
+}
+
+.to-popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 24px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.to-popup-title {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+.trip-btn{
+    display: none;
+}
+
+.suggestion-item.duplicate {
+    background-color: #4a6cf7; /* same as your highlighted popup style */
+    color: white;
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Remove Button */
+.remove-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.remove-btn:hover {
+    background: #c82333;
+}
+
+/* Popup Styling (if you need to enhance it) */
+.popup {
+    /* Your existing popup styles */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    display: none;
+}
+
+.popup.open {
+    display: block;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+}
+
+.popup-overlay.active {
+    display: block;
+}
+
+
+.add-trip-btn-nav {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: none;
+    color: #b1b0b0;
+    font-size: 28px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.12s, box-shadow 0.12s;
+    margin-top: 6px; 
+    margin-bottom: 6px;
+   
+}
+.to-popup-close {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.to-popup-close:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.to-popup-content {
+    padding: 24px;
+    padding-bottom: 100px; /* Space for footer */
+}
+
+.city-quick-picks {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.city-pick-btn {
+    padding: 10px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    color: white;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.city-pick-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.city-pick-btn.selected {
+    border-color: #ffd700;
+    background-color: rgba(255, 215, 0, 0.1);
+}
+
+.instruction-text {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.tags-section {
+    margin-bottom: 24px;
+}
+
+.tags-section-title {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.tags-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tag-btn {
+    padding: 10px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    color: white;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tag-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+}
+
+.tag-btn.selected {
+    border-color: #0066cc;
+    background-color: rgba(0, 102, 204, 0.2);
+}
+
+/* Weather tags with colored backgrounds */
+.tag-btn.weather-hot {
+    background-color: rgba(255, 87, 34, 0.2);
+    border-color: #ff5722;
+}
+
+.tag-btn.weather-warm {
+    background-color: rgba(255, 193, 7, 0.2);
+    border-color: #ffc107;
+}
+
+.tag-btn.weather-mild {
+    background-color: rgba(100, 181, 246, 0.2);
+    border-color: #64b5f6;
+}
+
+.tag-btn.weather-chill {
+    background-color: rgba(156, 39, 176, 0.2);
+    border-color: #9c27b0;
+}
+
+.tag-btn.weather-cold {
+    background-color: rgba(144, 202, 249, 0.2);
+    border-color: #90caf9;
+}
+
+.show-more-btn {
+    padding: 10px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    color: white;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 24px;
+}
+
+.show-more-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.to-popup-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tag-icon {
+    font-size: 16px;
+}
+
+/* Dates Popup Modal */
+.dates-popup {
+    position: fixed;
+    left: -500px;
+    top: 0;
+    width: 500px;
+    height: 100vh;
+    background-color: #2c2c2c;
+    z-index: 2;
+    transition: left 0.3s ease-in-out;
+    overflow-y: auto;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.dates-popup.open {
+    left: 480px; /* Position after the two sidebars (120px + 420px) */
+}
+
+.dates-popup-header {
+    background-color: #2c2c2c;
+    padding: 24px 24px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dates-popup-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.dates-popup-title {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.dates-popup-close {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.dates-popup-close:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dates-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.dates-tab {
+    flex: 1;
+    padding: 10px 12px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.dates-tab.active {
+    background-color: #0066cc;
+    color: white;
+}
+
+.dates-tab:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dates-tab-icon {
+    font-size: 16px;
+}
+
+.dates-input-section {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 0;
+}
+
+.date-input-group {
+    flex: 1;
+}
+
+.date-input-label {
+    color: white;
+    font-size: 13px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.date-input-field {
+    width: 100%;
+    padding: 12px;
+    background-color: white;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+}
+
+.date-input-field:focus {
+    outline: none;
+    border-color: #ff9800;
+}
+
+.date-input-field.active {
+    border-color: #ff9800;
+}
+
+.dates-popup-content {
+    flex: 1;
+    background-color: #0066cc;
+    padding: 24px;
+    overflow-y: auto;
+}
+
+.calendar-month {
+    margin-bottom: 40px;
+}
+
+.calendar-month-header {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.calendar-month-year {
+    opacity: 0.8;
+    font-size: 20px;
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: 40px repeat(7, 1fr);
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.calendar-weekday {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: 40px repeat(7, 1fr);
+    gap: 8px;
+}
+
+.calendar-week-num {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+    background-color: transparent;
+    border: none;
+}
+
+.calendar-day:hover:not(.disabled):not(.empty) {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.calendar-day.selected {
+    background-color: white;
+    color: #0066cc;
+    font-weight: 600;
+}
+
+.calendar-day.range-start,
+.calendar-day.range-end {
+    background-color: white;
+    color: #0066cc;
+    font-weight: 600;
+}
+
+.calendar-day.in-range {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.calendar-day.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.calendar-day.empty {
+    cursor: default;
+}
+
+.calendar-day.weekend-only:not(.weekend) {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.calendar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-nav-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.calendar-nav-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.calendar-nav-month {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Weekend Trip Specific Styles */
+.weekend-trip-section {
+    margin-bottom: 24px;
+}
+
+.weekend-trip-label {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.weekend-trip-input {
+    width: 100%;
+    padding: 12px;
+    background-color: white;
+    border: 2px solid #ff9800;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.weekend-trip-label-secondary {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.weekend-trip-input-secondary {
+    width: 100%;
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+}
+
+.weekend-trip-label-range {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.weekend-trip-range-display {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.weekend-trip-slider {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.weekend-trip-slider-track {
+    height: 100%;
+    background: white;
+    border-radius: 2px;
+    position: absolute;
+}
+
+.weekend-trip-slider-handle {
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: grab;
+}
+
+.weekend-trip-slider-handle:active {
+    cursor: grabbing;
+}
+
+.weekend-trip-days {
+    display: flex;
+    justify-content: space-between;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+}
+
+.dates-popup-footer {
+    background-color: #00897b;
+    padding: 20px 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dates-popup-footer-btn {
+    width: 100%;
+    padding: 16px;
+    background-color: white;
+    color: #00897b;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.dates-popup-footer-btn:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-1px);
+}
+
+.dates-popup-footer-btn:active {
+    transform: translateY(0);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Footer Styles */
+.site-footer {
+    background-color: var(--color-primary);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 50px 30px 30px;
+    margin-top: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-brand {
+    flex: 0 0 auto;
+}
+
+.footer-brand-name {
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1;
+}
+
+.footer-controls {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-control-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.footer-control-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    display: inline-block;
+}
+
+.footer-select {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.footer-select:focus {
+    outline: none;
+}
+
+.footer-control-text {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.footer-flag {
+    font-size: 18px;
+    line-height: 1;
+}
+
+.footer-chevron {
+    font-size: 8px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-left: 4px;
+    line-height: 1;
+}
+
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 11px;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.footer-nav-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.footer-nav-link:hover {
+    color: #ffffff;
+}
+
+.footer-nav-icon {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.footer-legal {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 4px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.footer-copyright {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.footer-separator {
+    color: rgba(255, 255, 255, 0.4);
+    margin: 0 8px;
+    font-size: 12px;
+}
+
+.footer-legal-link {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.2s;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.footer-legal-link:hover {
+    color: #ffffff;
+}
+
+.footer-address {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-weight: 600;
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.footer-social {
+    display: flex;
+    align-items: center;
+}
+
+.footer-social-link {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+
+.footer-social-link:hover {
+    color: #ffffff;
+}
+
+.footer-social-link svg {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+}
+
+/* Footer Responsive */
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 40px 24px 32px;
+        margin-top: 0;
+    }
+    
+    .footer-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        padding-bottom: 24px;
+    }
+
+    .footer-brand {
+        width: 100%;
+    }
+
+    .footer-brand-name {
+        font-size: 36px;
+        letter-spacing: 2px;
+    }
+
+    .footer-controls {
+        gap: 20px;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .footer-control-item {
+        font-size: 13px;
+        min-height: 32px;
+        padding: 4px 0;
+    }
+
+    .footer-control-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .footer-select {
+        font-size: 13px;
+    }
+
+    .footer-control-text {
+        font-size: 13px;
+    }
+
+    .footer-flag {
+        font-size: 16px;
+    }
+
+    .footer-nav {
+        gap: 18px;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+    }
+
+    .footer-nav-link {
+        font-size: 13px;
+        padding: 4px 0;
+        min-height: 32px;
+    }
+
+    .footer-legal {
+        font-size: 12px;
+        margin-bottom: 16px;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    .footer-separator {
+        margin: 0 6px;
+    }
+
+    .footer-address {
+        font-size: 12px;
+        margin-bottom: 24px;
+        line-height: 1.5;
+    }
+
+    .footer-social {
+        gap: 20px;
+    }
+
+    .footer-social-link {
+        width: 28px;
+        height: 28px;
+    }
+
+    .footer-social-link svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-footer {
+        padding: 32px 16px 24px;
+    }
+ 
+
+    .footer-top {
+        gap: 20px;
+        padding-bottom: 20px;
+    }
+
+    .footer-brand-name {
+        font-size: 28px;
+        letter-spacing: 1.5px;
+    }
+
+    .footer-controls {
+        gap: 16px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .footer-control-item {
+        font-size: 12px;
+        gap: 6px;
+    }
+
+    .footer-control-icon {
+        width: 14px;
+        height: 14px;
+    }
+
+    .footer-select {
+        font-size: 12px;
+    }
+
+    .footer-control-text {
+        font-size: 12px;
+    }
+
+    .footer-flag {
+        font-size: 14px;
+    }
+
+    .footer-chevron {
+        font-size: 7px;
+    }
+
+    .footer-nav {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+
+    .footer-nav-link {
+        font-size: 13px;
+        padding: 6px 0;
+    }
+
+    .footer-nav-icon {
+        font-size: 14px;
+    }
+
+    .footer-legal {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        font-size: 11px;
+        margin-bottom: 16px;
+    }
+
+    .footer-copyright {
+        font-size: 11px;
+    }
+
+    .footer-separator {
+        display: none;
+    }
+
+    .footer-legal-link {
+        font-size: 11px;
+        display: block;
+        padding: 2px 0;
+    }
+
+    .footer-address {
+        font-size: 11px;
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+
+    .footer-social {
+        gap: 16px;
+    }
+
+    .footer-social-link {
+        width: 32px;
+        height: 32px;
+    }
+
+    .footer-social-link svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* ===========================
+   ADDITIONAL MEDIA QUERIES FOR RESPONSIVENESS
+   (Added to make the site fully responsive)
+   =========================== */
+
+/* Tablet: 1024px and below */
+@media screen and (max-width: 1024px) {
+    .main-content {
+        margin-left: 355px !important;
+    }
+   
+    .promo-menu > div {
+        padding: 16px;
+    }
+
+    .promo-select-nav {
+        font-size: 13px;
+        padding: 6px 8px;
+    }
+
+    .content-wrapper {
+        padding-top: 120px !important;
+    }
+    .promo-controls {
+        top: 12px;
+        right: 12px;
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+    
+    .passenger-popup.open,
+    .from-popup.open,
+    .to-popup.open,
+    .dates-popup.open {
+        left: 355px !important;
+    }
+    
+    .popup-overlay {
+        left: 355px !important;
+    }
+    
+    .feature-card {
+        padding: 40px !important;
+    }
+    
+    .feature-title {
+        font-size: 22px !important;
+        line-height: 30px !important;
+    }
+    
+    .feature-desc {
+        font-size: 17px !important;
+        line-height: 24px !important;
+    }
+    
+    .destination-card-wrapper {
+        flex: 0 0 50% !important;
+    }
+    
+    .other-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* Tablet: 768px and below */
+@media screen and (max-width: 768px) {
+    .main-container {
+        flex-direction: column !important;
+    }
+
+    
+    .left-sidebar-2 {
+        position: relative !important;
+        left: 0 !important;
+        width: 100% !important;
+        padding: 20px !important;
+    }
+    
+    .main-content {
+        margin-left: 0 !important;
+        min-width: 100% !important;
+        width: 100% !important;
+    }
+    
+    .content-wrapper {
+        padding-top: 40px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    
+
+    
+    .promo-cta {
+        margin-top: 20px !important;
+    }
+    
+    .promo-cta .promo-title {
+        font-size: 32px !important;
+        line-height: 1.2 !important;
+    }
+    
+    .promo-cta .promo-description {
+        font-size: 18px !important;
+        line-height: 26px !important;
+    }
+    
+    /* Popups for mobile */
+    .passenger-popup,
+    .from-popup,
+    .to-popup,
+    .dates-popup {
+        width: 100% !important;
+        height: 100vh !important;
+        left: -100% !important;
+    }
+    
+    .passenger-popup.open,
+    .from-popup.open,
+    .to-popup.open,
+    .dates-popup.open {
+        left: 0 !important;
+    }
+    
+    .popup-overlay {
+        left: 0 !important;
+    }
+    
+    /* Features section */
+    .features-inner {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        padding: 0 20px !important;
+    }
+    
+    .feature-card {
+        padding: 30px !important;
+        min-height: auto !important;
+    }
+    
+    /* Destinations */
+    .destination-card-wrapper {
+        flex: 0 0 100% !important;
+    }
+    
+    .other-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+    
+    /* Mission section */
+    .mission-section {
+        padding: 60px 20px !important;
+    }
+    
+    .mission-title {
+        font-size: 28px !important;
+        line-height: 36px !important;
+    }
+    
+    .mission-subtitle {
+        font-size: 18px !important;
+        line-height: 26px !important;
+    }
+    
+    /* Subscribe banner */
+    .subscribe-container {
+        flex-direction: column !important;
+        padding: 40px 30px !important;
+        gap: 30px !important;
+    }
+    
+    .subscribe-form {
+        max-width: 100% !important;
+    }
+    
+    .email-input,
+    .signup-button {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .subscribe-description {
+        text-align: center !important;
+        max-width: 100% !important;
+    }
+    
+    /* Footer */
+    .footer-top {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 20px !important;
+    }
+    
+    .footer-controls {
+        flex-wrap: wrap !important;
+        gap: 15px !important;
+    }
+}
+
+@media screen and (max-width: 860px) {
+
+    .left-sidebar {
+        display: none !important;
+    }
+    .left-sidebar-2{
+        left: 40px;
+    }
+    .trip-btn{
+        display: flex;
+    }
+    .promo-select{
+        display: none;
+    }
+}
+
+/* Mobile: 480px and below */
+@media screen and (max-width: 480px) {
+
+    
+    .sidebar-title {
+        font-size: 12px !important;
+        padding: 5px 8px !important;
+        white-space: nowrap !important;
+    }
+    
+    .trip-block {
+        min-width: 150px !important;
+        margin-right: 10px !important;
+        padding: 12px !important;
+    }
+    
+    .brand-name {
+        font-size: 24px !important;
+    }
+    
+    .tagline {
+        font-size: 16px !important;
+        line-height: 22px !important;
+    }
+    
+    .content-wrapper {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    
+    .promo-cta .promo-title {
+        font-size: 28px !important;
+    }
+    
+    .promo-cta .promo-description {
+        font-size: 16px !important;
+        line-height: 24px !important;
+    }
+    
+    .start-btn {
+        width: 100% !important;
+    }
+    
+    .examples-title {
+        font-size: 24px !important;
+        text-align: center !important;
+    }
+    
+    .examples-list {
+        justify-content: center !important;
+    }
+    
+    .example-pill {
+        padding: 10px 15px !important;
+        font-size: 14px !important;
+    }
+    
+    .feature-card {
+        padding: 25px !important;
+    }
+    
+    .feature-title {
+        font-size: 20px !important;
+        line-height: 28px !important;
+    }
+    
+    .feature-desc {
+        font-size: 16px !important;
+        line-height: 22px !important;
+    }
+    
+    .mission-title {
+        font-size: 24px !important;
+        line-height: 32px !important;
+    }
+    
+    .mission-subtitle {
+        font-size: 16px !important;
+    }
+    
+    .featured-destinations-title {
+        font-size: 24px !important;
+    }
+    
+    .destination-image {
+        height: 250px !important;
+    }
+    
+    .other-tile {
+        height: 80px !important;
+        padding: 12px 15px !important;
+    }
+    
+    .other-tile .small {
+        font-size: 14px !important;
+    }
+    
+    .other-tile .big {
+        font-size: 18px !important;
+    }
+    
+    .subscribe-container {
+        padding: 30px 20px !important;
+    }
+    
+    .subscribe-title {
+        font-size: 26px !important;
+    }
+    
+    .footer-brand-name {
+        font-size: 32px !important;
+    }
+    
+    .footer-nav {
+        flex-wrap: wrap !important;
+        gap: 12px !important;
+    }
+    
+    .footer-nav-link {
+        font-size: 14px !important;
+    }
+    
+    .popup-overlay.active {
+        opacity: 0.9 !important;
+        background: rgba(0, 0, 0, 0.9) !important;
+    }
+}
+
+/* Small mobile: 360px and below */
+@media screen and (max-width: 360px) {
+    .brand-name {
+        font-size: 22px !important;
+    }
+    
+    .tagline {
+        font-size: 14px !important;
+        line-height: 20px !important;
+    }
+    
+    .promo-cta .promo-title {
+        font-size: 24px !important;
+    }
+    
+    .promo-cta .promo-description {
+        font-size: 15px !important;
+        line-height: 22px !important;
+    }
+    
+    .example-pill {
+        padding: 8px 12px !important;
+        font-size: 13px !important;
+    }
+    
+    .feature-card {
+        padding: 20px !important;
+    }
+    
+    .feature-title {
+        font-size: 18px !important;
+        line-height: 26px !important;
+    }
+    
+    .feature-desc {
+        font-size: 15px !important;
+        line-height: 21px !important;
+    }
+    
+    .mission-title {
+        font-size: 22px !important;
+        line-height: 30px !important;
+    }
+    
+    .destination-image {
+        height: 200px !important;
+    }
+    
+    .other-tile {
+        height: 70px !important;
+        padding: 10px 12px !important;
+    }
+    
+    .footer-brand-name {
+        font-size: 28px !important;
+    }
+}
